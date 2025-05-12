@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MN6043 - Ailuminate LMS (Fixed Dropdown)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: white; }
+    .header {
+      background-color: #004225;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header h1 { margin: 0; font-size: 20px; }
+    .header img {
+      height: 40px;
+    }
+
+    .nav-bar {
+      display: flex;
+      gap: 20px;
+      font-weight: bold;
+      background-color: #004225;
+      color: white;
+      padding: 12px 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+      display: block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      color: black;
+      min-width: 200px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 9999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2f2f2;
+    }
+
+    .main {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-box {
+      text-align: center;
+    }
+
+    .ai-card-container {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .ai-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 20px;
+      width: 250px;
+      text-align: left;
+    }
+
+    .ai-prompt-bar {
+      margin: 40px auto;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .ai-prompt-bar input {
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    .ai-prompt-bar button {
+      background: #004225;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MN6043 - MANAGING COMPLEXITY IN PROJECTS</h1>
+  <img src="ul-logo.jpg" alt="University of Limerick Logo">
+</div>
+
+<div class="nav-bar">
+  <div>Module Home</div>
+  <div class="dropdown">
+    Content
+    <div class="dropdown-content">
+      <a>Overview</a>
+      <a>AI Digital Badges</a>
+      <a>Case Studies</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    Communication
+    <div class="dropdown-content">
+      <a>Announcements</a>
+      <a>Calendar</a>
+      <a>Discussions</a>
+      <a>Microsoft Teams</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    Class Organisation
+    <div class="dropdown-content">
+      <a>Attendance</a>
+      <a>Awards</a>
+      <a>Checklist</a>
+      <a>Class Progress</a>
+      <a>Classlist</a>
+      <a>Grades</a>
+      <a>Groups</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    Course Tools
+    <div class="dropdown-content">
+      <a onclick="loadAiluminate()">Ailuminate</a>
+      <a>Assignments</a>
+      <a>Exams</a>
+      <a>ePortfolio</a>
+      <a>FAQ</a>
+      <a>Glossary</a>
+      <a>Links</a>
+      <a>Panopto</a>
+      <a>Quizzes</a>
+      <a>Surveys</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="sidebar">
+    <h3>Module Overview</h3>
+    <div><strong>Assessment 2</strong><br/>Sustainability Case Study</div><br/>
+    <div>Assessment 1<br/>AI Digital Badges</div>
+  </div>
+  <div class="content" id="mainContent">
+    <h2>Assessment 2: Sustainability Case Study</h2>
+    <p><strong>AI PROMPT</strong><br/>Enter a prompt...</p>
+  </div>
+</div>
+
+<script>
+  function loadAiluminate() {
+    document.getElementById("mainContent").innerHTML = `
+      <div class="ai-box">
+        <h2>Welcome to Ailuminate!</h2>
+        <p>Explore Project Management with Ailuminate AI Assistant</p>
+
+        <div class="ai-card-container">
+          <div class="ai-card">
+            <strong>Create Project Timeline</strong>
+            <p>Develop a project timeline detailing each phase, key milestones, deadlines, and more.</p>
+          </div>
+          <div class="ai-card">
+            <strong>Draft Risk Management Plan</strong>
+            <p>Create a detailed risk plan including risk identification, mitigation, and contingencies.</p>
+          </div>
+          <div class="ai-card">
+            <strong>Risk Management Plan</strong>
+            <p>Develop a risk plan outlining risks, strategies, and response actions.</p>
+          </div>
+        </div>
+
+        <div class="ai-prompt-bar">
+          <input type="text" placeholder="Ask me about project management" />
+          <button>→</button>
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
