@@ -205,7 +205,7 @@
       <div class="ai-box">
         <h2>Welcome to Ailuminate!</h2>
         <p>Explore Project Management with Ailuminate AI Assistant</p>
-
+  
         <div class="ai-card-container">
           <div class="ai-card">
             <strong>Create Project Timeline</strong>
@@ -220,14 +220,28 @@
             <p>Develop a risk plan outlining risks, strategies, and response actions.</p>
           </div>
         </div>
-
+  
         <div class="ai-prompt-bar">
           <input type="text" placeholder="Ask me about project management" />
-          <button>→</button>
+          <button id="askButton">→</button>
         </div>
       </div>
     `;
+  
+    // Button click handler to display hardcoded response
+    document.getElementById("askButton").addEventListener("click", function () {
+      const responseBox = document.createElement("div");
+      responseBox.style.marginTop = "20px";
+      responseBox.style.padding = "15px";
+      responseBox.style.border = "1px solid #ccc";
+      responseBox.style.borderRadius = "8px";
+      responseBox.style.backgroundColor = "#f9f9f9";
+      responseBox.innerText = "This is a hardcoded response from Ailuminate AI.";
+  
+      document.querySelector(".ai-box").appendChild(responseBox);
+    });
   }
+
 </script>
 
 </body>
