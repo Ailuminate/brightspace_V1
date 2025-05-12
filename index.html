@@ -236,7 +236,23 @@
       responseBox.style.border = "1px solid #ccc";
       responseBox.style.borderRadius = "8px";
       responseBox.style.backgroundColor = "#f9f9f9";
-      responseBox.innerText = "";
+      responseBox.innerHTML = `
+  <p><strong>Creating a project risk plan for a public water project</strong> involves identifying potential risks, assessing their impact and likelihood, and developing strategies to mitigate them. Here's a structured approach to creating a risk plan:</p>
+
+  <p><strong>Risk Identification:</strong></p><p> Begin by identifying all possible risks that could affect the project. These might include technical risks, such as leaks or equipment failures, political risks, such as changes in regulations or public opposition, and environmental risks, such as natural disasters or contamination.</p>
+
+  <p><strong>Risk Assessment:</strong> </p><p>Evaluate the identified risks in terms of their likelihood and potential impact on the project. This can be done using qualitative methods, such as expert judgment, or quantitative methods, such as expected value analysis.</p>
+
+  <p><strong>Risk Mitigation Strategies:</strong></p><p> Develop strategies to mitigate each risk. This could involve technical solutions, such as using more reliable materials or technologies, or procedural solutions, such as developing contingency plans or engaging stakeholders to address political concerns.</p>
+
+  <p><strong>Risk Monitoring and Control:</strong></p><p> Establish processes for monitoring risks throughout the project lifecycle. This includes regular reviews of risk status and effectiveness of mitigation strategies, as well as updating the risk plan as new risks emerge or existing risks change.</p>
+
+  <p><strong>Communication and Documentation:</strong></p><p> Ensure that all risk-related information is documented and communicated to relevant stakeholders. This includes maintaining a risk register and providing regular updates to the project team and other stakeholders.</p>
+
+  <p>In summary, a comprehensive risk plan for a public water project should include a systematic approach to identifying, assessing, mitigating, and monitoring risks. By proactively managing risks, the project team can minimize potential disruptions and ensure successful project delivery. It's crucial to involve all stakeholders in the risk management process to address concerns and leverage collective expertise.</p>
+
+  <p>If you need more specific details or assistance with particular aspects of the risk plan, please let me know!</p>
+  `;
   
       document.querySelector(".ai-box").appendChild(responseBox);
     });
